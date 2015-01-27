@@ -1,0 +1,10 @@
+{
+    "name": "wwstubber",
+    "devDependencies": {},
+    "scripts": {
+        "start": "node_modules/.bin/robohydra robohydra/conf.json"
+    },
+    "dependencies": {
+        "robohydra": "^0.5.2"
+    }
+}
