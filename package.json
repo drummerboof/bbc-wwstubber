@@ -7,6 +7,6 @@
         "start": "node_modules/.bin/robohydra robohydra/conf.json"
     },
     "dependencies": {
-        "robohydra": "git://github.com/drummerboof/robohydra#master"
+        "robohydra": "^0.5.2"
     }
 }
