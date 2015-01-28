@@ -1,1 +1,1 @@
-web: node node_modules/.bin/robohydra -p 8080    robohydra/conf.json
+web: node node_modules/.bin/robohydra -p 80 -n

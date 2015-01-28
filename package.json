@@ -1,6 +1,9 @@
 {
     "name": "wwstubber",
     "devDependencies": {},
+    "engines": {
+        "node": "0.10.x"
+    },
     "scripts": {
         "start": "node_modules/.bin/robohydra robohydra/conf.json"
     },
