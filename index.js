@@ -29,8 +29,8 @@ var currentJourney = {
 
 mime.extensions['text/xml'] = ['xml'];
 
-function journeyFile (journey) {
-    return path.join(root, 'journies', journey.backend, journey.journey, 'journey.json');
+function journeyFile (backend, journey) {
+    return path.join(root, 'journies', backend, journey, 'journey.json');
 }
 
 function startRecording (backend, journeyName) {
@@ -42,10 +42,7 @@ function startRecording (backend, journeyName) {
         content: {}
     };
 
-    rimraf.sync(path.dirname(journeyFile(journey)));
-    mkdirp.sync(path.dirname(journeyFile(journey)));
-
-    journey.fileHandle = fs.openSync(journeyFile(journey), 'w+');
+    journey.fileHandle = fs.openSync(journeyFile(backend, journeyName), 'w+');
     fs.writeSync(journey.fileHandle, JSON.stringify(journey.content, null, 4), 0);
 
     return journey;
@@ -64,7 +61,7 @@ function startPlaying (backend, journeyName) {
     }
 
     journey.fileHandle = null;
-    journey.content = JSON.parse(fs.readFileSync(journeyFile(journey), { encoding: 'utf8' }));
+    journey.content = JSON.parse(fs.readFileSync(journeyFile(backend, journeyName), { encoding: 'utf8' }));
 
     return journey;
 }
@@ -185,6 +182,11 @@ app.get('/favicon.ico', function (req, res) {
 app.get('/record/:backend/:journey', function (req, res, next) {
     if (config.backends.indexOf(req.params.backend) < 0) {
         error(res, 500, 'unknown backend: ' + req.params.backend);
+        return;
+    }
+    console.log(path.dirname(journeyFile(req.params.backend, req.params.journey)));
+    if (fs.existsSync(path.dirname(journeyFile(req.params.backend, req.params.journey)))) {
+        error(res, 500, 'Journey with name ' + req.params.journey + ' already exists. Delete it first.');
         return;
     }
     currentJourney = startRecording(req.params.backend, req.params.journey);
