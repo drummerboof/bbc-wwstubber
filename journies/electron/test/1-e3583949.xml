@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <lst name="responseHeader">
+        <int name="status">0</int>
+        <int name="QTime">4</int>
+        <lst name="params">
+            <str name="sort">lastUpdated desc</str>
+            <str name="q">atomWorkspace:wwhomepage AND (atomCollection:stories OR atomCollection:stories-draft)</str>
+            <str name="rows">200</str>
+        </lst>
+    </lst>
+    <result name="response" numFound="59" start="0">
+        <doc>
+            <str name="atomCollection">stories-draft</str>
+            <str name="atomId">/electron/atom/v1/wwhomepage/stories-draft/201501301731-test-story.xml</str>
+            <str name="atomWorkspace">wwhomepage</str>
+            <int name="draft_i">1</int>
+            <str name="folder">/wwhomepage/stories-draft</str>
+            <str name="id">201501301731-test-story.xml</str>
+            <date name="lastUpdated">2015-01-30T17:31:04Z</date>
+            <date name="published">2015-01-30T17:31:04Z</date>
+            <str name="source_s">Test</str>
+            <str name="title">Test Story</str>
+            <str name="type_s">story</str>
+        </doc>
+    </result>
+</response>

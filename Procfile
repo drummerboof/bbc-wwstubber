@@ -1,1 +1,1 @@
-web: node node_modules/robohydra/bin/robohydra.js -p $PORT robohydra/conf.json
+web: node index.js
