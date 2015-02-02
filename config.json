@@ -1,7 +1,0 @@
-{
-    "port": 3000,
-    "clientCert": "../cert.pem",
-    "clientKey": "../key.pem",
-    "proxy": "http://www-cache-wdl.reith.bbc.co.uk:80",
-    "backends": ["electron"]
-}
