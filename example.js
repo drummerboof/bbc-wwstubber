@@ -3,7 +3,7 @@ var Stubber = require('./index.js').Stubber;
 
 var test = new Stubber({
     port: 8080,
-    journeyPath: __dirname + '/journeys/',
+    journeyPath: 'journeys',
     proxy: 'http://www-cache-wdl.reith.bbc.co.uk:80'
 });
 
