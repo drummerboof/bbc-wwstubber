@@ -108,7 +108,7 @@ creating the stub server. If the test directory already exists, an error will be
 
 ### Check status of stub server
 ```
-http://localhost:3000/stats
+http://localhost:3000/status
 ```
 Return the status of the stub server and any currently recording or playing journey.
 
